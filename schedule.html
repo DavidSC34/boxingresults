@@ -10,6 +10,7 @@
     <!-- Preload -->
     <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ion.calendar.css">
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +22,7 @@
 
 <body>
 
-    <header class="header inicio">
+    <header class="header">
         <div class="contenedor">
 
             <div class="barra">
@@ -34,12 +35,19 @@
                 </nav>
             </div>
         </div>
-        <div class="header__texto">
-            <h2 class="no-margin">Boxing Schedules and Fight Results</h2>
-            <p class="no-margin">The World Consulting'boxing Results Page</p>
-            <!-- <p><span>Photo by <a href="https://unsplash.com/@austriannationallibrary?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Austrian National Library</a> on <a href="https://unsplash.com/s/photos/boxing-gloves?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p> -->
-        </div>
+
     </header>
+    <main class="contenedor">
+        <h1 class="centrar-texto">Schedule</h1>
+
+
+    </main>
+    <section class="contenedor">
+        <h3>Select a date</h3>
+        <div class="myCalendar" id="myCalendar-1"></div>
+        <h3>Schedule found:</h3>
+    </section>
+
     <footer class="footer">
         <div class="contenedor">
             <div class="barra">
@@ -54,5 +62,21 @@
         </div>
     </footer>
 </body>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/moment-with-locales.min.js"></script>
+<script src="js/ion.calendar.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#myCalendar-1").ionCalendar({
+            lang: "en",
+            years: "2020-2021",
+            onClick: function(date) {
+                // $("#result-2").html("onClick: " + date);
+                console.log(date);
+            }
+        });
+    });
+</script>
 
 </html>
